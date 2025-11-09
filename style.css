@@ -1,0 +1,152 @@
+body {
+  margin: 0;
+  font-family: 'Didot', serif;
+  background: #f6f6f6;
+}
+
+/* HERO SLIDESHOW */
+.hero {
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.slide {
+  opacity: 0;
+  transition: opacity 1.5s ease-in-out;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.hero img {
+  width: 100%;
+  height: 100vh; /* ensures image fills viewport height */
+  object-fit: contain; /* preserves aspect ratio, fits inside screen */
+}
+
+.hero::after {
+  content:"";
+  position:absolute;
+  top:0; left:0; width:100%; height:100%;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.5));
+  pointer-events:none;
+}
+
+.overlayText {
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #fff;
+  font-size: 3rem;
+  text-shadow: 0 0 15px rgba(0,0,0,0.6);
+}
+
+.hero {
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.slide {
+  opacity: 0;
+  transition: opacity 1.5s ease-in-out;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.slide-row {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+.slide-row img {
+  flex: 1;
+  object-fit: cover; /* fills each third without stretching */
+  width: 33.33%;
+  height: 100%;
+}
+
+
+/* SPOTIFY PLAYER */
+.musicPlayer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 40px 0;
+}
+
+/* GALLERY GRID */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 columns */
+  grid-template-rows: repeat(3, auto); /* 3 rows */
+  gap: 15px;
+  width: 90%;
+  margin: auto;
+}
+
+.gallery video {
+  width: 100%;
+  aspect-ratio: 4/5; /* portrait ratio */
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.8s ease-out;
+}
+
+.gallery video.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.message {
+  width: 80%;
+  margin: 40px auto;
+  text-align: center;
+  font-size: 1.2rem;
+  font-family: 'Didot', serif;
+  color: #333;
+  line-height: 1.6;
+  background: rgba(255, 255, 255, 0.8);
+  padding: 20px 25px;
+  border-radius: 12px;
+  box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+}
+.musicPlayer {
+  width: 90%;
+  margin: 40px auto;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.85);
+  padding: 20px 25px;
+  border-radius: 12px;
+  box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+}
+
+.songTitle {
+  font-family: 'Didot', serif;
+  font-size: 1.3rem;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+#playButton {
+  background: #1DB954; /* Spotify green vibe */
+  color: #fff;
+  border: none;
+  padding: 10px 25px;
+  border-radius: 50px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+#playButton:hover {
+  background: #1ed760;
+  transform: scale(1.05);
+}
